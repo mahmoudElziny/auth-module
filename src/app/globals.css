@@ -19,3 +19,41 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+input::placeholder {
+  font: 14px sans-serif;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #1f43f4be;
+}
+
+.or {
+  position: relative;
+}
+
+.or::after {
+  content: "";
+  width: 75px;
+  height: 1px;
+  background-color: #6C737F;
+  position: absolute;
+  right: 5px;
+  top: 7px;
+}
+
+.or::before {
+  content: "";
+  width: 75px;
+  height: 1px;
+  background-color: #6C737F;
+  position: absolute;
+  left: 5px;
+  top: 7px;
+}
+
+.fw-3 {
+  font-weight: 300;
+}
+
