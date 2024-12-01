@@ -104,6 +104,11 @@ export default function signup() {
                 type="text"
                 placeholder="Enter Username"
               />
+              {formik.errors.username && formik.touched.username ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.username}</h6>
+              ) : (
+                ""
+              )}
               <input
               id="firstName"
                 name="firstName"
@@ -114,6 +119,11 @@ export default function signup() {
                 type="text"
                 placeholder="Enter firstName"
               />
+              {formik.errors.firstName && formik.touched.firstName ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.firstName}</h6>
+              ) : (
+                ""
+              )}
               <input
               id="lastName"
                 name="lastName"
@@ -124,6 +134,11 @@ export default function signup() {
                 type="text"
                 placeholder="Enter lastName"
               />
+              {formik.errors.lastName && formik.touched.lastName ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.lastName}</h6>
+              ) : (
+                ""
+              )}
               <input
               id="email"
                 name="email"
@@ -134,6 +149,11 @@ export default function signup() {
                 type="email"
                 placeholder="Enter Email"
               />
+              {formik.errors.email && formik.touched.email ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.email}</h6>
+              ) : (
+                ""
+              )}
               <input
                 name="password"
                 onChange={formik.handleChange}
@@ -143,6 +163,11 @@ export default function signup() {
                 type="password"
                 placeholder="Enter Password"
               />
+              {formik.errors.password && formik.touched.password ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.password}</h6>
+              ) : (
+                ""
+              )}
               <input
                 name="rePassword"
                 onChange={formik.handleChange}
@@ -152,6 +177,11 @@ export default function signup() {
                 type="password"
                 placeholder="Confirm Password"
               />
+              {formik.errors.rePassword && formik.touched.rePassword ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.rePassword}</h6>
+              ) : (
+                ""
+              )}
               <input
                 name="phone"
                 onChange={formik.handleChange}
@@ -161,6 +191,11 @@ export default function signup() {
                 type="tel"
                 placeholder="Enter Your Phone"
               />
+              {formik.errors.phone && formik.touched.phone ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.phone}</h6>
+              ) : (
+                ""
+              )}
               <button
                 className="bg-[#4461F2] text-xs text-white w-full p-2 rounded-md mt-6 shadow-lg"
                 type="submit"

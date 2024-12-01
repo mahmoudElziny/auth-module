@@ -12,7 +12,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export default function signin() {
-  
   let validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
@@ -77,24 +76,34 @@ export default function signin() {
             <h5 className="font-bold text-l">Sign in</h5>
             <form onSubmit={formik.handleSubmit} className="">
               <input
-              id="email"
+                id="email"
                 name="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
-                className="w-full bg-[#F9F9F9] rounded-md my-3 p-2"
+                className="w-full bg-[#F9F9F9] rounded-md mt-3 p-2"
                 type="email"
                 placeholder="Enter Email"
               />
+              {formik.errors.email && formik.touched.email ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.email}</h6>
+              ) : (
+                ""
+              )}
               <input
                 name="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
-                className="w-full bg-[#F9F9F9] rounded-md p-2"
+                className="w-full bg-[#F9F9F9] rounded-md mt-3 p-2"
                 type="password"
                 placeholder="Enter Password"
               />
+              {formik.errors.password && formik.touched.password ? (
+                <h6 className="text-red-500 text-sm">{formik.errors.password}</h6>
+              ) : (
+                ""
+              )}
               <h6 className="text-[#4461F2] text-xs my-2 justify-self-end cursor-pointer">
                 <Link href="/forgetPassword">Forgot Password?</Link>
               </h6>
