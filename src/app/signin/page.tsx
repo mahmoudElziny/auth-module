@@ -12,6 +12,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export default function signin() {
+  
   let validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
@@ -36,7 +37,6 @@ export default function signin() {
         redirect: true,
         callbackUrl: "/",
       });
-      console.log(user);
     },
     validationSchema,
   });
@@ -86,9 +86,6 @@ export default function signin() {
                 type="email"
                 placeholder="Enter Email"
               />
-              {/* {formik.errors.email && formik.touched.email ? 
-                  document.getElementById("email")!.style.border = "2px solid red"
-                : document.getElementById("email")!.classList.add("border") } */}
               <input
                 name="password"
                 onChange={formik.handleChange}

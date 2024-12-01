@@ -2,6 +2,8 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
+
 
 
 export const options : NextAuthOptions = {
@@ -13,6 +15,10 @@ export const options : NextAuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+        }),
+        FacebookProvider({
+            clientId: process.env.FACEBOOK_CLIENT_ID as string,
+            clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string,
         }),
         CredentialsProvider({
             name: "Credentials",
@@ -40,7 +46,6 @@ export const options : NextAuthOptions = {
 
                 // If no error and we have user data, return it
                 if (user) { 
-                    console.log(user);
                     return user
                 }
                 // Return null if user data could not be retrieved
@@ -50,6 +55,7 @@ export const options : NextAuthOptions = {
     ],
     pages: {
         signIn: "/signin",
+        newUser: "/signup",
     }
 }
 

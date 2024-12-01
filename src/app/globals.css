@@ -29,6 +29,11 @@ input:focus {
   border: 2px solid #1f43f4be;
 }
 
+input:invalid {
+  outline: none;
+  border: 2px solid red;
+}
+
 .or {
   position: relative;
 }
